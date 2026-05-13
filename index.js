@@ -7,7 +7,7 @@
  *   GET /health
  */
 
-const WORKER_BASE = '{url here}';
+const WORKER_BASE = 'https://yume-proxy.shawnmwask1234.workers.dev';
 
 /* ─── CDN rule table ─────────────────────────────────────────────────────── */
 const CDN_RULES = [
