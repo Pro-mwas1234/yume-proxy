@@ -4,7 +4,6 @@ workers_dev = true
 compatibility_date = "2024-01-01"
 
 [env.production]
-vars = {
-  API_KEY = "592b50225dd4d524eec26eb3c1a967615764c3c694d8f1f9e6091d8bc883aca7",
-  CF_API_TOKEN = "cfat_2PATEYHvhdNk1zlZpJORGltHYUdPJjufU8ztaRCwaa82987c"
-}
+[env.production.vars]
+API_KEY = "592b50225dd4d524eec26eb3c1a967615764c3c694d8f1f9e6091d8bc883aca7"
+CF_API_TOKEN = "cfat_2PATEYHvhdNk1zlZpJORGltHYUdPJjufU8ztaRCwaa82987c"
