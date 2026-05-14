@@ -7,8 +7,7 @@
  *   GET /health
  */
 
-// TODO: Replace with your actual deployed worker URL after deployment
-const WORKER_BASE = 'https://yume-proxy.shawnmwask1234.workers.dev';
+const WORKER_BASE = '{url here}';
 
 /* ─── CDN rule table ─────────────────────────────────────────────────────── */
 const CDN_RULES = [
@@ -291,5 +290,8 @@ async function handleRequest(request, env) {
 export default {
   async fetch(request, env, ctx) {
     return handleRequest(request, env);
+  },
+};
+Request(request, env);
   },
 };
