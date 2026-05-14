@@ -292,3 +292,6 @@ export default {
     return handleRequest(request, env);
   },
 };
+Request(request, env);
+  },
+};
