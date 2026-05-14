@@ -2,6 +2,8 @@ name = "yume-proxy"
 main = "index.js"
 workers_dev = true
 compatibility_date = "2024-01-01"
+# TODO: Add your Cloudflare account_id here (find it in Cloudflare dashboard)
+# account_id = "your_account_id_here"
 
 [env.production]
 [env.production.vars]
