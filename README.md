@@ -16,14 +16,20 @@ wrangler login
 
 ### 3. Configure wrangler.toml
 Edit `wrangler.toml` and add:
-- `account_id`: Your Cloudflare account ID
+- `account_id`: Your Cloudflare account ID (required)
 - `workers_dev`: Set to `true` for `*.workers.dev` deployment, or `false` for custom domain
 - For custom domain:
   - `route`: Your worker route (e.g., `example.com/api/proxy/*`)
   - `zone_id`: Your domain's zone ID
 
+**Important**: You MUST add your `account_id` to wrangler.toml before deploying!
+
 ### 4. Update WORKER_BASE in index.js
-Replace `{url here}` with your worker's URL (e.g., `https://yumezone.example.com` or `https://yourname.workers.dev`)
+Replace the hardcoded URL with your actual worker URL after deployment:
+- If using workers.dev: `https://yume-proxy.<your-subdomain>.workers.dev`
+- If using custom domain: `https://your-domain.com`
+
+**This is critical**: The M3U8 rewriting feature uses this constant to rewrite playlist URLs. If it doesn't match your actual worker URL, the rewritten links will point to the wrong location and fail.
 
 ### 5. Deploy
 ```bash
@@ -31,6 +37,8 @@ npm run deploy
 # or
 wrangler deploy
 ```
+
+After deployment, Wrangler will output your worker URL. Copy that URL and update `WORKER_BASE` in `index.js`, then redeploy.
 
 ### 6. Test
 ```bash
